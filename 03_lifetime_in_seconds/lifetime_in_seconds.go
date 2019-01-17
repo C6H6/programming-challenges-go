@@ -1,0 +1,29 @@
+package main
+
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"time"
+)
+
+func main() {
+	var birth = getDate()
+	var now = time.Now()
+	var diff = now.Sub(birth)
+	fmt.Println(diff.Seconds())
+}
+
+func getDate() time.Time {
+	reader := bufio.NewReader(os.Stdin)
+
+	for {
+		fmt.Print("Date of birth (DD-MM-YYYY): ")
+		text, readErr := reader.ReadString('\n')
+		date, timeErr := time.Parse("02-01-2006\n", text)
+
+		if readErr == nil && timeErr == nil {
+			return date
+		}
+	}
+}

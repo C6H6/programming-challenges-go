@@ -41,7 +41,7 @@ func convert(inputScale int, outputScale int, value int) float32 {
 		case 1:
 			return float32(value)
 		case 2:
-			return float32(value * 9 / 5 + 32)
+			return float32(value*9/5 + 32)
 		case 3:
 			return float32(value) + 273.15
 		}
@@ -59,7 +59,7 @@ func convert(inputScale int, outputScale int, value int) float32 {
 		case 1:
 			return float32(value) - 273.15
 		case 2:
-			return float32(value) * 9 / 5 - 459.67
+			return float32(value)*9/5 - 459.67
 		case 3:
 			return float32(value)
 		}
