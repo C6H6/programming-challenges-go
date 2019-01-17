@@ -1,0 +1,11 @@
+$ go run temperature_converter.go
+1. Celsius
+2. Fahrenheit
+3. Kelvin
+Input scale: 1
+1. Celsius
+2. Fahrenheit
+3. Kelvin
+Output scale: 3
+Value: 10
+Result: 283.15

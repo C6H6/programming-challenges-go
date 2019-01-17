@@ -1,0 +1,5 @@
+$ go run encryption_decryption.go 'abc def'
+!"#`$%&
+
+go run encryption_decryption.go '!"#`$%&'
+abc def

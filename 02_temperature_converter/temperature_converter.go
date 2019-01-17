@@ -8,7 +8,7 @@ func main() {
 	var inputScale = getScaleChoice("Input scale")
 	var outputScale = getScaleChoice("Output scale")
 	var value = getValue()
-	fmt.Println(convert(inputScale, outputScale, value))
+	fmt.Println("Result:", convert(inputScale, outputScale, value))
 }
 
 func getScaleChoice(questionText string) int {

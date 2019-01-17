@@ -15,7 +15,7 @@ func main() {
 	var firstName = getName(firstNameSyllables)
 	var lastName = getName(lastNameSyllables)
 
-	fmt.Printf("%s %s", firstName, lastName)
+	fmt.Printf("%s %s\n", firstName, lastName)
 }
 
 func getName(nameSet []string) string {

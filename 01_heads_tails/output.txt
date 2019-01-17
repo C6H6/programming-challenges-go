@@ -1,0 +1,11 @@
+$ go run heads_tails.go -number 10
+tail
+tail
+tail
+head
+head
+head
+tail
+head
+tail
+head

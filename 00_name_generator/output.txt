@@ -1,0 +1,8 @@
+$ go run name_generator.go
+Rashizen Fokfokzak
+
+$ go run name_generator.go
+Zagblargizen Fokzak
+
+$ go run name_generator.go
+Monfayshi Maloabo
