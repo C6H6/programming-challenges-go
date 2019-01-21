@@ -1,0 +1,2 @@
+$ go run love_calculator.go Patryk Golang
+79%

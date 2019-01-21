@@ -20,7 +20,7 @@ func main() {
 
 	for tries > 0 {
 		var shot = readChar()
-		var success = false
+		var success bool
 		masked, success = process(phrase, masked, shot)
 
 		if !success {
