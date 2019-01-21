@@ -1,0 +1,20 @@
+$ go run rock_paper_scissors.go
+1. Rock
+2. Paper
+3. Scissors
+Choice: 1
+Loss! (Rock vs. Paper)
+
+$ go run rock_paper_scissors.go
+1. Rock
+2. Paper
+3. Scissors
+Choice: 2
+Draw! (Paper vs. Paper)
+
+$go run rock_paper_scissors.go
+1. Rock
+2. Paper
+3. Scissors
+Choice: 3
+Win! (Scissors vs. Paper)

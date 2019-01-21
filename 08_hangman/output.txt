@@ -1,0 +1,17 @@
+$ go run hangman.go
+Enter secret phrase:
+****
+Guess: t
+t**t
+Tries left: 8
+Guess: p
+t**t
+Tries left: 7
+Guess: e
+te*t
+Tries left: 7
+Guess: s
+test
+Tries left: 7
+You win!
+Phrase: test
