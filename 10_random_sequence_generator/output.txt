@@ -1,0 +1,8 @@
+$ go run random_sequence_generator.go
+He doesn't play games
+
+$ go run random_sequence_generator.go
+We don't bake cookies
+
+$ go run random_sequence_generator.go
+She reads letter
