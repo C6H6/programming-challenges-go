@@ -1,0 +1,2 @@
+$ go run password_generator.go -length 12
+HX|bk9Z8k@6[
