@@ -1,0 +1,2 @@
+$ go run sntp_client.go -host 0.pl.pool.ntp.org
+2019-01-28 23:34:19.080432991 +0100 CET
