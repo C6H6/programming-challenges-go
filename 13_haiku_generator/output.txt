@@ -1,0 +1,11 @@
+$ go run haiku_generator.go
+A time or year, time of day (e.g. summer, night): night
+An adjective to describe that time: cold
+First singular noun: dog
+Second singular noun: cat
+Noun adjective: fast
+Verb (e.g. sings, runs): runs
+
+beautiful night
+a fast, interesting cat runs
+enjoying the dog
