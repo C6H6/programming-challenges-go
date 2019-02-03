@@ -1,0 +1,2 @@
+$ go run reverse_string.go "Lorem Ipsum"
+muspI meroL
