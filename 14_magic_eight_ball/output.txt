@@ -1,0 +1,3 @@
+$ go run magic_eight_ball.go
+Write, say or think your question: Is my code perfect?
+As I see it, yes.
