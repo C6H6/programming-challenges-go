@@ -9,16 +9,23 @@ import (
 )
 
 func main() {
+	fmt.Println(getName())
+}
+
+func getName() string {
 	var firstNameSyllables = []string{"mon", "fay", "mag", "shi", "zag", "blarg", "rash", "izen"}
 	var lastNameSyllables = []string{"malo", "zak", "abo", "wonk", "fok"}
 
-	var firstName = getName(firstNameSyllables)
-	var lastName = getName(lastNameSyllables)
+	var buffer bytes.Buffer
 
-	fmt.Printf("%s %s\n", firstName, lastName)
+	buffer.WriteString(getSubName(firstNameSyllables))
+	buffer.WriteString(" ")
+	buffer.WriteString(getSubName(lastNameSyllables))
+
+	return buffer.String()
 }
 
-func getName(nameSet []string) string {
+func getSubName(nameSet []string) string {
 	rand.Seed(time.Now().UnixNano())
 	var syllables = rand.Intn(2) + 2
 
