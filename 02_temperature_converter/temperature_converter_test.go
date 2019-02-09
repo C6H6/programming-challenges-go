@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 
-func TestConvertProperlyCelsius2Fahrenheit(t *testing.T)  {
+func TestConvertProperlyCelsius2Fahrenheit(t *testing.T) {
 	result := convert(1, 2, 100)
 
 	if result != 212 {
@@ -12,7 +12,7 @@ func TestConvertProperlyCelsius2Fahrenheit(t *testing.T)  {
 	}
 }
 
-func TestConvertProperlyFahrenheit2Celsius(t *testing.T)  {
+func TestConvertProperlyFahrenheit2Celsius(t *testing.T) {
 	result := convert(2, 1, 100)
 
 	if result != 37 {
@@ -20,7 +20,7 @@ func TestConvertProperlyFahrenheit2Celsius(t *testing.T)  {
 	}
 }
 
-func TestConvertProperlyFahrenheit2Kelvin(t *testing.T)  {
+func TestConvertProperlyFahrenheit2Kelvin(t *testing.T) {
 	result := convert(2, 3, 100)
 
 	if result != 310.9278 {
@@ -28,7 +28,7 @@ func TestConvertProperlyFahrenheit2Kelvin(t *testing.T)  {
 	}
 }
 
-func TestConvertProperlyKelvin2Fahrenheit(t *testing.T)  {
+func TestConvertProperlyKelvin2Fahrenheit(t *testing.T) {
 	result := convert(3, 2, 100)
 
 	if result != -279.67 {
@@ -36,7 +36,7 @@ func TestConvertProperlyKelvin2Fahrenheit(t *testing.T)  {
 	}
 }
 
-func TestConvertProperlyKelvin2Celsius(t *testing.T)  {
+func TestConvertProperlyKelvin2Celsius(t *testing.T) {
 	result := convert(3, 1, 100)
 
 	if result != -173.149994 {
@@ -44,7 +44,7 @@ func TestConvertProperlyKelvin2Celsius(t *testing.T)  {
 	}
 }
 
-func TestConvertProperlyCelsius2Kelvin(t *testing.T)  {
+func TestConvertProperlyCelsius2Kelvin(t *testing.T) {
 	result := convert(1, 3, 100)
 
 	if result != 373.15 {

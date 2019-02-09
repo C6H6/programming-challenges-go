@@ -9,9 +9,7 @@ import (
 
 func main() {
 	var birth = getDate()
-	var now = time.Now()
-	var diff = now.Sub(birth)
-	fmt.Println(diff.Seconds())
+	fmt.Printf("%d seconds", int64(getResult(birth)))
 }
 
 func getDate() time.Time {
@@ -26,4 +24,11 @@ func getDate() time.Time {
 			return date
 		}
 	}
+}
+
+func getResult(birth time.Time) float64 {
+	var now = time.Now()
+	var diff = now.Sub(birth)
+
+	return diff.Seconds()
 }

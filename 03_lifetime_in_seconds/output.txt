@@ -1,3 +1,3 @@
 $ go run lifetime_in_seconds.go
 Date of birth (DD-MM-YYYY): 01-01-2006
-4.116850717435568e+08
+413655570 seconds

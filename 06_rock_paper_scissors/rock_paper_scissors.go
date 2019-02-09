@@ -6,8 +6,34 @@ import (
 	"time"
 )
 
-func main() {
+func init() {
+	rand.Seed(time.Now().UnixNano())
+}
 
+func main() {
+	user := getUserChoice()
+	computer := getComputerChoice()
+
+	fmt.Println(getResult(user, computer))
+}
+
+func getUserChoice() int {
+	fmt.Println("1. Rock\n2. Paper\n3. Scissors")
+	var i int
+	for {
+		fmt.Printf("Choice: ")
+		_, err := fmt.Scanf("%d", &i)
+		if err == nil && i >= 1 && i <= 3 {
+			return i - 1
+		}
+	}
+}
+
+func getComputerChoice() int {
+	return rand.Intn(3)
+}
+
+func getResult(user int, computer int) string {
 	// 0-Rock; 1-Paper; 2-Scissors
 	// [user][computer]
 	var results = [][]string{
@@ -18,21 +44,5 @@ func main() {
 
 	var options = []string{"Rock", "Paper", "Scissors"}
 
-	var user = getChoice()
-	rand.Seed(time.Now().UnixNano())
-	var computer = rand.Intn(3)
-
-	fmt.Printf("%s! (%s vs. %s)\n", results[user][computer], options[user], options[computer])
-}
-
-func getChoice() int {
-	fmt.Println("1. Rock\n2. Paper\n3. Scissors")
-	var i int
-	for {
-		fmt.Printf("Choice: ")
-		_, err := fmt.Scanf("%d", &i)
-		if err == nil && i >= 1 && i <= 3 {
-			return i - 1
-		}
-	}
+	return fmt.Sprintf("%s! (%s vs. %s)", results[user][computer], options[user], options[computer])
 }
