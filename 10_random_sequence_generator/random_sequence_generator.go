@@ -12,6 +12,31 @@ func init() {
 }
 
 func main() {
+	fmt.Println(getSentence())
+}
+
+func isThirdPerson(person int) bool {
+	for i := 2; i <= 4; i++ {
+		if person == i {
+			return true
+		}
+	}
+	return false
+}
+
+func getRandomKey(verbs map[string]map[string][]string) string {
+	i := rand.Intn(len(verbs))
+	var k string
+	for k = range verbs {
+		if i == 0 {
+			break
+		}
+		i--
+	}
+	return k
+}
+
+func getSentence() string {
 	var persons = []string{"I", "You", "He", "She", "It", "We", "They"}
 	var negations = []string{"don't", "doesn't"}
 
@@ -47,26 +72,5 @@ func main() {
 
 	sentence = append(sentence, verbs[verb]["nouns"][len(verbs[verb]["nouns"])-1])
 
-	fmt.Println(strings.Join(sentence, " "))
-}
-
-func isThirdPerson(person int) bool {
-	for i := 2; i <= 4; i++ {
-		if person == i {
-			return true
-		}
-	}
-	return false
-}
-
-func getRandomKey(verbs map[string]map[string][]string) string {
-	i := rand.Intn(len(verbs))
-	var k string
-	for k = range verbs {
-		if i == 0 {
-			break
-		}
-		i--
-	}
-	return k
+	return fmt.Sprintln(strings.Join(sentence, " "))
 }

@@ -14,10 +14,17 @@ func init() {
 func main() {
 	var lengthPtr = flag.Int("length", 8, "Password length")
 	flag.Parse()
-	var charsets = []string{"abcdefghijklmnopqrstuvwxyz", "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "0123456789", "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"}
-	var groups = getGroups(*lengthPtr, len(charsets))
 
-	var result = make([]byte, *lengthPtr, *lengthPtr)
+	result := getPassword(*lengthPtr)
+
+	fmt.Println(string(result))
+}
+
+func getPassword(length int) []byte {
+	var charsets = []string{"abcdefghijklmnopqrstuvwxyz", "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "0123456789", "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"}
+	var groups = getGroups(length, len(charsets))
+
+	var result = make([]byte, length, length)
 
 	var pos = 0
 	for index, size := range groups {
@@ -27,8 +34,7 @@ func main() {
 		}
 	}
 
-	result = shuffle(result)
-	fmt.Println(string(result))
+	return shuffle(result)
 }
 
 func getGroups(length int, groups int) []int {

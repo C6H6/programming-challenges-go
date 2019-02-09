@@ -11,7 +11,7 @@ import (
 
 func main() {
 	var portPtr = flag.String("port", "123", "Port")
-	var hostPtr = flag.String("host", "localhost", "Server address")
+	var hostPtr = flag.String("host", "0.pl.pool.ntp.org", "Server address")
 	flag.Parse()
 
 	var addressBuffer bytes.Buffer
@@ -44,11 +44,8 @@ func main() {
 		return
 	}
 
-	seconds := buf[40:44]
-	fraction := buf[44:48]
-
-	timestamp := binary.BigEndian.Uint32(seconds) - 2208988800
-	timestampNano := binary.BigEndian.Uint32(fraction)
+	seconds, fraction := parseResponse(buf)
+	timestamp, timestampNano := getParsedTimestamps(seconds, fraction)
 
 	date := time.Unix(int64(timestamp), int64(timestampNano))
 	fmt.Println(date)
@@ -58,4 +55,15 @@ func getRequest() []byte {
 	var request = make([]byte, 48, 48)
 	request[0] = 0x1B // 00, 011, 011 = No warning, IPv4 only, Client
 	return request
+}
+
+func parseResponse(res []byte) ([]byte, []byte) {
+	seconds := res[40:44]
+	fraction := res[44:48]
+
+	return seconds, fraction
+}
+
+func getParsedTimestamps(seconds []byte, fraction []byte) (uint32, uint32) {
+	return binary.BigEndian.Uint32(seconds) - 2208988800, binary.BigEndian.Uint32(fraction)
 }
