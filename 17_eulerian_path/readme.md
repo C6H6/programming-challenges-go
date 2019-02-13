@@ -1,0 +1,1 @@
+For implementation check [this pull request](https://github.com/C6H6/algoimpl/pull/1).
